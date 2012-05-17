@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : ObjetivosNegocio2.xml
+    Created on : 31 de marzo de 2010, 18:22
+    Author     : DavidyAly
+    Description:
+        Purpose of the document follows.
+-->
+
+<ObjetivosDelNegocio>
+    <ObjetivoRaiz id="0" nombre="Operación de préstamo">
+        <Objetivo id="1" nombre="Solicitud de información préstamo enviada">
+            <DescripcionObjetivo
+            nombreObjetivo="Solicitud de información de préstamo enviada"
+            Descripcion="Se envía una solicitud de información de préstamo"
+            Accion="Enviar solicitud"
+            Restricciones=""
+            Obstaculos=""
+            Precondiciones="El cliente ingresa al sistema"
+            PostCondiciones="Existe una nueva solicitud de crédito"
+            SubObjetivos="El cliente ingresa los antecedentes del crédito solicitado y envía la solicitud">
+                <Agentes>
+                    <Agente nombre="Cliente"/>
+                </Agentes>
+                <Interesados>
+                    <Interesado nombre="Cliente"/>
+                    <Interesado nombre="Ejecutivo de Cuenta"/>
+                </Interesados>
+            </DescripcionObjetivo>
+            <Tareas>
+                <Tarea id="2" nombre="Ingresar antecedentes del crédito"/>
+                <Tarea id="3" nombre="Solicitar enviar solicitud"/>
+                <Tarea id="4" nombre="Enviar solicitud"/>
+            </Tareas>
+        </Objetivo>
+        <Objetivo id="5" nombre="Información del cliente obtenida">
+            <DescripcionObjetivo
+            nombreObjetivo="Información del cliente obtenida"
+            Descripcion="Se solicita documentación necesaria al cliente y se obtiene información bancaria del mismo"
+            Accion="Obtener información del cliente"
+            Restricciones=""
+            Obstaculos="El cliente no envía la documentación solicitada"
+            Precondiciones="Existe una documentación pendiente para el cliente"
+            PostCondiciones="Existe información asociada a la solicitud del cliente"
+            SubObjetivos="El ejecutivo solicita al cliente enviar documentación necesaria y solicita a su secretaria obtener información bancaria del cliente">
+                <Agentes>
+                    <Agente nombre="Ejecutivo de Cuenta"/>
+                </Agentes>
+                <Interesados>
+                    <Interesado nombre="Cliente"/>
+                    <Interesado nombre="Ejecutivo de Cuenta"/>
+                    <Interesado nombre="Secretaria"/>
+                </Interesados>
+            </DescripcionObjetivo>
+            <Tareas>
+                <Tarea id="6" nombre="Solicitar documentación para crédito">
+                    <Tarea id="7" nombre="Enviar solicitud al cliente">                     
+                        <Tarea id="8" nombre="Ingresar antecedentes del crédito"/>
+                        <Tarea id="9" nombre="Solicitar enviar solicitud"/>
+                        <Tarea id="10" nombre="Enviar solicitud"/>   
+                    </Tarea>
+                    <Tarea id="11" nombre="Adjuntar documentos enviados">
+                        <Tarea id="12" nombre="Seleccionar archivo"/>
+                        <Tarea id="13" nombre="Adjuntar archivo"/>
+                    </Tarea>
+                    <Tarea id="14" nombre="Solicitar guardar documentación"/>
+                    <Tarea id="15" nombre="Guardar documentación"/>
+                </Tarea>
+                <Tarea id="16" nombre="Solicitar información personal">
+                    <Tarea id="17" nombre="Seleccionar cliente"/>
+                    <Tarea id="18" nombre="Ingresar información"/>
+                    <Tarea id="19" nombre="Solicitar guardar información"/>
+                    <Tarea id="20" nombre="Guardar información"/>
+                </Tarea>
+                
+            </Tareas>
+        </Objetivo>
+        <Objetivo id="21" nombre="Crédito Evaluado">
+            <DescripcionObjetivo
+            nombreObjetivo="Crédito evaluado"
+            Descripcion="Se evalúa según los antecedentes entregados por el cliente se se aprueba o rechaza la solicitud de crédito"
+            Accion="Evaluar crédito"
+            Restricciones="El crédito es > 500.000"
+            Obstaculos="Falta documentación necesaria"
+            Precondiciones="Existe una solicitud pendiente para el cliente"
+            PostCondiciones="La solicitud de crédito ha sido aprobada"
+            SubObjetivos="El jefe de Dpto. de crédito ingresa la información asociada a la solicitud y evalúa se se aprueba o rechaza el crédito">
+                <Agentes>
+                    <Agente nombre="Jefe Dpto. Crédito"/>
+                </Agentes>
+                <Interesados>
+                    <Interesado nombre="Jefe Dpto. Crédito"/>
+                    <Interesado nombre="Ejecutivo de Cuenta"/>
+                </Interesados>
+            </DescripcionObjetivo>
+            <Tareas>
+                <Tarea id="22" nombre="Seleccionar cliente"/>
+                <Tarea id="23" nombre="Ingresar valor del crédito"/>
+                <Tarea id="24" nombre="Solicitar evaluar crédito"/>
+                <Tarea id="25" nombre="Evaluar crédito"/>
+            </Tareas>
+        </Objetivo>
+        <Objetivo id="26" nombre="Documentos formalizados">
+            <DescripcionObjetivo
+            nombreObjetivo="Documentos formalizados"
+            Descripcion="Se generan los documentos necesarios para formalizar el crédito otorgado"
+            Accion="Formalizar documentos"
+            Restricciones=""
+            Obstaculos=""
+            Precondiciones="El crédito fué aprobado"
+            PostCondiciones="Se crearon los documentos para formalizar el crédito"
+            SubObjetivos="El ejecutivo selecciona los documentos quw requiere generar y los genera">
+                <Agentes>
+                    <Agente nombre="Secretaria"/>
+                </Agentes>
+                <Interesados>
+                    <Interesado nombre="Ejecutivo de Cuenta"/>
+                    <Interesado nombre="Secretaria"/>
+                </Interesados>
+            </DescripcionObjetivo>
+            <Tareas>
+                <Tarea id="27" nombre="Seleccionar cliente"/>
+                <Tarea id="28" nombre="Seleccionar documentos necesarios"/>
+                <Tarea id="29" nombre="Solicitar generar documentos"/>
+                <Tarea id="30" nombre="Generar documentos"/>
+            </Tareas>
+        </Objetivo>
+        <Objetivo id="31" nombre="Aceptación crédito informada">
+            <DescripcionObjetivo
+            nombreObjetivo="Aceptación de crédito informada"
+            Descripcion="Se informa al cliente que su solicitud de crédito ha sido aprobada"
+            Accion="Informar aceptación de crédito"
+            Restricciones=""
+            Obstaculos=""
+            Precondiciones="El crédito fue aprobado"
+            PostCondiciones="Se ha enviado información del crédito al cliente"
+            SubObjetivos="El ejecutivo adjunta información al respecto del crédito aprobado y la envía al cliente">
+                <Agentes>
+                    <Agente nombre="Ejecutivo de Cuenta"/>
+                </Agentes>
+                <Interesados>
+                    <Interesado nombre="Ejecutivo de Cuenta"/>
+                    <Interesado nombre="Cliente"/>
+                </Interesados>
+            </DescripcionObjetivo>
+            <Tareas>
+                <Tarea id="32" nombre="Seleccionar cliente"/>
+                <Tarea id="33" nombre="Adjuntar información del crédito">
+                    <Tarea id="34" nombre="Seleccionar archivo"/>
+                    <Tarea id="35" nombre="Adjuntar archivo"/>
+                </Tarea>
+                <Tarea id="36" nombre="Solicitar enviar información"/>
+                <Tarea id="37" nombre="Enviar información"/>
+            </Tareas>
+        </Objetivo>
+        <Objetivo id="38" nombre="Operación cerrada">
+            <DescripcionObjetivo
+            nombreObjetivo="Operación cerrada"
+            Descripcion="Se entrega el crédito al cliente y se cierra la solicitud"
+            Accion="Cerrar operación"
+            Restricciones=""
+            Obstaculos="El cliente no acepta las condiciones del crédito y no firma los documentos "
+            Precondiciones="El crédito fue aprobado y se generaron los documentos necesarios para su entrega"
+            PostCondiciones="La solicitud ha sido cerrada"
+            SubObjetivos="El ejecutivo adjunta información al respecto del crédito aprobado y la envía al cliente">
+                <Agentes>
+                    <Agente nombre="Ejecutivo de Cuenta"/>
+                </Agentes>
+                <Interesados>
+                    <Interesado nombre="Ejecutivo de Cuenta"/>
+                    <Interesado nombre="Cliente"/>
+                </Interesados>
+            </DescripcionObjetivo>
+            <Tareas>
+                <Tarea id="39" nombre="Seleccionar cliente"/>
+                <Tarea id="40" nombre="Adjuntar documentos firmados">
+                    <Tarea id="41" nombre="Seleccionar archivo"/>
+                    <Tarea id="42" nombre="Adjuntar archivo"/>
+                </Tarea>
+                <Tarea id="43" nombre="Solicitar cerrar solicitud"/>
+                <Tarea id="44" nombre="Cerrar solicitud"/>
+            </Tareas>
+        </Objetivo>
+    </ObjetivoRaiz>
+</ObjetivosDelNegocio>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : MapaConversacional2.xml
+    Created on : 31 de marzo de 2010, 17:55
+    Author     : DavidyAly
+    Description:
+        Purpose of the document follows.
+-->
+
+<MapaConversacional>
+    <Estaciones>
+        <Ciclos>
+            <Ciclo id="0" idNom="MAIN" Etiqueta="Operación de Préstamo">
+                <ListaClientes>
+                    <RolC nombre="Cliente"/>
+                </ListaClientes>
+                <ListaRealizadores>
+                    <RolR nombre="Ejecutivo de Cuenta"/>
+                </ListaRealizadores>
+            </Ciclo>
+            <Ciclo id="1" idNom="A" Etiqueta="Solicitud Información Préstamo">
+                <ListaClientes>
+                    <RolC nombre="Cliente"/>
+                </ListaClientes>
+                <ListaRealizadores>
+                    <RolR nombre="Ejecutivo de Cuenta"/>
+                </ListaRealizadores>
+            </Ciclo>
+            <Ciclo id="3" idNom="B1" Etiqueta="Documentación para Crédito">
+                <ListaClientes>
+                    <RolC nombre="Ejecutivo de Cuenta"/>
+                </ListaClientes>
+                <ListaRealizadores>
+                    <RolR nombre="Cliente"/>
+                </ListaRealizadores>
+            </Ciclo>
+            <Ciclo id="4" idNom="B2" Etiqueta="Información Bancaria Cliente">
+                <ListaClientes>
+                    <RolC nombre="Ejecutivo de Cuenta"/>
+                </ListaClientes>
+                <ListaRealizadores>
+                    <RolR nombre="Secretaria"/>
+                </ListaRealizadores>
+            </Ciclo>
+            <Ciclo id="5" idNom="B2A" Etiqueta="Información Personal">
+                <ListaClientes>
+                    <RolC nombre="Secretaria"/>
+                </ListaClientes>
+                <ListaRealizadores>
+                    <RolR nombre="Investigador"/>
+                </ListaRealizadores>
+            </Ciclo>
+            <Ciclo id="7" idNom="C1" Etiqueta="Evaluación Crédito">
+                <ListaClientes>
+                    <RolC nombre="Ejecutivo de Cuenta"/>
+                </ListaClientes>
+                <ListaRealizadores>
+                    <RolR nombre="Jefe Dpto. Crédito"/>
+                </ListaRealizadores>
+            </Ciclo>
+            <Ciclo id="8" idNom="D" Etiqueta="Formalizar Documentos">
+                <ListaClientes>
+                    <RolC nombre="Ejecutivo de Cuenta"/>
+                </ListaClientes>
+                <ListaRealizadores>
+                    <RolR nombre="Secretaria"/>
+                </ListaRealizadores>
+            </Ciclo>
+            <Ciclo id="9" idNom="DA" Etiqueta="Documentos Computacionales">
+                <ListaClientes>
+                    <RolC nombre="Secretaria"/>
+                </ListaClientes>
+                <ListaRealizadores>
+                    <RolR nombre="Jefe Dpto. Computación"/>
+                </ListaRealizadores>
+            </Ciclo>
+            <Ciclo id="10" idNom="E" Etiqueta="Información Aceptación Crédito">
+                <ListaClientes>
+                    <RolC nombre="Ejecutivo de Cuenta"/>
+                </ListaClientes>
+                <ListaRealizadores>
+                    <RolR nombre="Cliente"/>
+                </ListaRealizadores>
+            </Ciclo>
+            <Ciclo id="11" idNom="F" Etiqueta="Cerrar Operación">
+                <ListaClientes>
+                    <RolC nombre="Ejecutivo de Cuenta"/>
+                </ListaClientes>
+                <ListaRealizadores>
+                    <RolR nombre="Cliente"/>
+                </ListaRealizadores>
+            </Ciclo>
+        </Ciclos>
+        <Controles>
+            <ControlesAnd>
+                <AndControl id="2" idNom="B"/>
+            </ControlesAnd>
+            <ControlesOr>
+                <OrControl id="6" idNom="C" Condicion="¿Crédito>500M?"/>
+            </ControlesOr>
+        </Controles>
+    </Estaciones>
+    <Enlaces>
+        <Pertenencias>
+            <Pertenencia Origen="0" Destino="1" Etiqueta=""/>
+            <Pertenencia Origen="0" Destino="2" Etiqueta=""/>
+            <Pertenencia Origen="2" Destino="3" Etiqueta=""/>
+            <Pertenencia Origen="2" Destino="4" Etiqueta=""/>
+            <Pertenencia Origen="4" Destino="5" Etiqueta=""/>
+            <Pertenencia Origen="0" Destino="6" Etiqueta=""/>
+            <Pertenencia Origen="6" Destino="7" Etiqueta=""/>
+            <Pertenencia Origen="0" Destino="8" Etiqueta=""/>
+            <Pertenencia Origen="8" Destino="9" Etiqueta=""/>
+            <Pertenencia Origen="0" Destino="10" Etiqueta=""/>
+            <Pertenencia Origen="0" Destino="11" Etiqueta=""/>
+        </Pertenencias>
+        <Excepciones>
+
+        </Excepciones>
+    </Enlaces>
+</MapaConversacional>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<CasosDeUso>
+    <casoDeUso
+        descripcion="El usuario Ingresar antecedentes del crédito, Solicitar enviar solicitud y el sistema Enviar solicitud."
+        etiqueta="Solicitud de información préstamo enviada"
+        excepciones="--" id="0"
+        postcondiciones="Existe una nueva solicitud de crédito"
+        precondiciones="El cliente ingresa al sistema. "
+        resumen="Se envía una solicitud de información de préstamo" version="1.0">
+        <actores>Cliente</actores>
+    </casoDeUso>
+    <casoDeUso
+        descripcion="El usuario Ingresar antecedentes del crédito, Solicitar enviar solicitud y el sistema Enviar solicitud. El usuario Seleccionar archivo, Adjuntar archivo, Solicitar guardar documentación y el sistema Guardar documentación. El usuario Seleccionar cliente, Ingresar información, Solicitar guardar información y el sistema Guardar información."
+        etiqueta="Información del cliente obtenida"
+        excepciones="El cliente no envía la documentación solicitada"
+        id="1"
+        postcondiciones="Existe información asociada a la solicitud del cliente"
+        precondiciones="Existe una documentación pendiente para el cliente. "
+        resumen="Se solicita documentación necesaria al cliente y se obtiene información bancaria del mismo" version="1.0">
+        <actores>Ejecutivo de Cuenta, Secretaria</actores>
+    </casoDeUso>
+    <casoDeUso
+        descripcion="El usuario Seleccionar cliente, Ingresar valor del crédito, Solicitar evaluar crédito y el sistema Evaluar crédito."
+        etiqueta="Crédito Evaluado"
+        excepciones="Falta documentación necesaria" id="2"
+        postcondiciones="La solicitud de crédito ha sido aprobada"
+        precondiciones="Existe una solicitud pendiente para el cliente. El crédito es > 500.000"
+        resumen="Se evalúa según los antecedentes entregados por el cliente se se aprueba o rechaza la solicitud de crédito" version="1.0">
+        <actores>Ejecutivo de Cuenta</actores>
+    </casoDeUso>
+    <casoDeUso
+        descripcion="El usuario Seleccionar cliente, Seleccionar documentos necesarios, Solicitar generar documentos y el sistema Generar documentos."
+        etiqueta="Documentos formalizados" excepciones="--" id="3"
+        postcondiciones="Se crearon los documentos para formalizar el crédito"
+        precondiciones="El crédito fué aprobado. "
+        resumen="Se generan los documentos necesarios para formalizar el crédito otorgado" version="1.0">
+        <actores>Ejecutivo de Cuenta, Secretaria</actores>
+    </casoDeUso>
+    <casoDeUso
+        descripcion="El usuario Seleccionar cliente, Seleccionar archivo, Adjuntar archivo, Solicitar enviar información y el sistema Enviar información."
+        etiqueta="Aceptación crédito informada" excepciones="--" id="4"
+        postcondiciones="Se ha enviado información del crédito al cliente"
+        precondiciones="El crédito fue aprobado. "
+        resumen="Se informa al cliente que su solicitud de crédito ha sido aprobada" version="1.0">
+        <actores>Ejecutivo de Cuenta</actores>
+    </casoDeUso>
+    <casoDeUso
+        descripcion="El usuario Seleccionar cliente, Seleccionar archivo, Adjuntar archivo, Solicitar cerrar solicitud y el sistema Cerrar solicitud."
+        etiqueta="Operación cerrada"
+        excepciones="El cliente no acepta las condiciones del crédito y no firma los documentos "
+        id="5" postcondiciones="La solicitud ha sido cerrada"
+        precondiciones="El crédito fue aprobado y se generaron los documentos necesarios para su entrega. "
+        resumen="Se entrega el crédito al cliente y se cierra la solicitud" version="1.0">
+        <actores>Ejecutivo de Cuenta</actores>
+    </casoDeUso>
+</CasosDeUso>

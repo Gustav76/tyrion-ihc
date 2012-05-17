@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/validarON.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE ObjetivosDelNegocio SYSTEM "validarON.dtd">
+
+    <ObjetivosDelNegocio>
+    ...
+    </ObjetivosDelNegocio>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ObjetivosDelNegocio (ObjetivoRaiz)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ObjetivoRaiz (Objetivo)*>
+<!ATTLIST ObjetivoRaiz
+    nombre CDATA #IMPLIED
+    id CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Objetivo (Tareas|DescripcionObjetivo)*>
+<!ATTLIST Objetivo
+    nombre CDATA #IMPLIED
+    id CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT DescripcionObjetivo (Interesados|Agentes)*>
+<!ATTLIST DescripcionObjetivo
+    SubObjetivos CDATA #IMPLIED
+    PostCondiciones CDATA #IMPLIED
+    Precondiciones CDATA #IMPLIED
+    Obstaculos CDATA #IMPLIED
+    Restricciones CDATA #IMPLIED
+    Acción CDATA #IMPLIED
+    Descripcion CDATA #IMPLIED
+    nombreObjetivo CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Agentes (Agente)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Agente EMPTY>
+<!ATTLIST Agente
+    nombre CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Interesados (Interesado)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Interesado EMPTY>
+<!ATTLIST Interesado
+    nombre CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Tareas (Tarea)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Tarea (Tarea)*>
+<!ATTLIST Tarea
+    nombre CDATA #IMPLIED
+    id CDATA #IMPLIED
+  >

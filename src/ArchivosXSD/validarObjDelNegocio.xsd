@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:attribute name="id" type="xsd:int"/>
+    <xsd:attribute name="nombre" type="xsd:string"/>
+    <xsd:attribute name="nombreObjetivo" type="xsd:string"/>
+    <xsd:attribute name="Descripcion" type="xsd:string"/>
+    <xsd:attribute name="Accion" type="xsd:string"/>
+    <xsd:attribute name="Restricciones" type="xsd:string"/>
+    <xsd:attribute name="Obstaculos" type="xsd:string"/>
+    <xsd:attribute name="Precondiciones" type="xsd:string"/>
+    <xsd:attribute name="PostCondiciones" type="xsd:string"/>
+    <xsd:attribute name="SubObjetivos" type="xsd:string"/>
+
+   <xsd:element name="Interesado">
+       <xsd:complexType>
+           <xsd:attribute ref="nombre" use="required"/>
+       </xsd:complexType>
+   </xsd:element>
+
+   <xsd:element name="Agente">
+       <xsd:complexType>
+           <xsd:attribute ref="nombre" use="required"/>
+       </xsd:complexType>
+   </xsd:element>
+
+   <xsd:element name="Agentes">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Agente" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Interesados">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Interesado" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Tarea">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Tarea" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute ref="id" use="required"/>
+            <xsd:attribute ref="nombre" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Tareas">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Tarea" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="DescripcionObjetivo">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Agentes" minOccurs="1" maxOccurs="1"/>
+                <xsd:element ref="Interesados" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute ref="nombreObjetivo" use="required"/>
+            <xsd:attribute ref="Descripcion" use="required"/>
+            <xsd:attribute ref="Accion" use="required"/>
+            <xsd:attribute ref="Restricciones" use="optional"/>
+            <xsd:attribute ref="Obstaculos" use="optional"/>
+            <xsd:attribute ref="Precondiciones" use="required"/>
+            <xsd:attribute ref="PostCondiciones" use="required"/>
+            <xsd:attribute ref="SubObjetivos" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Objetivo">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="DescripcionObjetivo" minOccurs="1" maxOccurs="1"/>
+                <xsd:element ref="Tareas" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute ref="id" use="required"/>
+            <xsd:attribute ref="nombre" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="ObjetivoRaiz">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Objetivo" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute ref="id" use="required"/>
+            <xsd:attribute ref="nombre" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="ObjetivosDelNegocio">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="ObjetivoRaiz" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

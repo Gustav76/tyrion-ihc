@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/validarMC.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE MapaConversacional SYSTEM "validarMC.dtd">
+
+    <MapaConversacional>
+    ...
+    </MapaConversacional>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT MapaConversacional (Enlaces|Estaciones)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Estaciones (Controles|Ciclos)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Ciclos (Ciclo)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Ciclo (ListaRealizadores|ListaClientes)*>
+<!ATTLIST Ciclo
+    Etiqueta CDATA #IMPLIED
+    idNom CDATA #IMPLIED
+    id CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ListaClientes (RolC)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT RolC EMPTY>
+<!ATTLIST RolC
+    nombre CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ListaRealizadores (RolR)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT RolR EMPTY>
+<!ATTLIST RolR
+    nombre CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Controles (ControlesOr|ControlesAnd)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ControlesAnd (AndControl)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT AndControl EMPTY>
+<!ATTLIST AndControl
+    idNom CDATA #IMPLIED
+    id CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ControlesOr (OrControl)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT OrControl EMPTY>
+<!ATTLIST OrControl
+    Condicion CDATA #IMPLIED
+    idNom CDATA #IMPLIED
+    id CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Enlaces (Excepciones|Pertenencias)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Pertenencias (Pertenencia)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Pertenencia EMPTY>
+<!ATTLIST Pertenencia
+    Etiqueta CDATA #IMPLIED
+    Destino CDATA #IMPLIED
+    Origen CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Excepciones (Excepcion)*>
+<!ELEMENT Excepcion EMPTY>
+<!ATTLIST Excepcion
+    Etiqueta CDATA #IMPLIED
+    Destino CDATA #IMPLIED
+    Origen CDATA #IMPLIED
+    Probabilidad CDATA #IMPLIED
+  >
