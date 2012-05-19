@@ -252,13 +252,13 @@ public class JPCargarArchivos extends javax.swing.JPanel {
                                     } else {
                     control.valido = false;
                                   this.control.control.getVista().setTextLabelEstado("Error al cargar archivos");
-                     JOptionPane.showMessageDialog(null, "Archivo XML: 'Objetivos del negocio' incorrecto. Revise la sintaxis del archivo o verifique que éste sea válido", "¡Error!", JOptionPane.ERROR_MESSAGE);
+                     JOptionPane.showMessageDialog(null, "Archivo XML: 'Objetivos del negocio' incorrecto.\r\nRevise la sintaxis del archivo o verifique que éste sea válido", "¡Error!", JOptionPane.ERROR_MESSAGE);
                                          //resp="error";
                                     }
                 
                             } else {
                                   this.control.control.getVista().setTextLabelEstado("Error al cargar archivos"); // + control.validarMapaConversacionelXML(mapaConversacional)
-                 JOptionPane.showMessageDialog(null, "Archivo XML: 'Mapa Conversacional' incorrecto. Revise estructura del archivo o verifique que éste sea válido", "¡Error!", JOptionPane.ERROR_MESSAGE);
+                 JOptionPane.showMessageDialog(null, "Archivo XML: 'Mapa Conversacional' incorrecto.\r\nRevise estructura del archivo o verifique que éste sea válido", "¡Error!", JOptionPane.ERROR_MESSAGE);
                                
                            }
               }else{

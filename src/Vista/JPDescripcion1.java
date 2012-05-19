@@ -629,7 +629,7 @@ public void validandoTabla(){
                                         control.valido = false;
             /*782*/                     JOptionPane.showMessageDialog(null, "Error fila " + this.validarSeleccionCombo().get(1) + ", " +
                                             ((this.validarSeleccionCombo().get(2).toString().equals("2"))? "columna Cliente": ((this.validarSeleccionCombo().get(2).toString().equals("3"))? "columna Realizador" : "")) + 
-                                            ". El Actor debe ser el mismo en todas las tareas del caso de uso", "¡Error!", JOptionPane.ERROR_MESSAGE);
+                                            ".\r\nEl Actor debe ser el mismo en todas las tareas del caso de uso", "¡Error!", JOptionPane.ERROR_MESSAGE);
             /*783*/                 }
         /*784*/             } else {
                                 control.valido = false;
@@ -637,7 +637,7 @@ public void validandoTabla(){
         /*786*/             }
 /*787*/         } else {
                     control.valido = false;
-/*788*/             JOptionPane.showMessageDialog(null, "Error fila " + (this.iguales().get(1)) + ". Cliente y Realizador iguales en una misma tarea. Cambie el cliente o realizador", "¡Error!", JOptionPane.ERROR_MESSAGE);
+/*788*/             JOptionPane.showMessageDialog(null, "Error fila " + (this.iguales().get(1)) + ". Cliente y Realizador iguales en una misma tarea.\r\nCambie el cliente o realizador", "¡Error!", JOptionPane.ERROR_MESSAGE);
 /*789*/         }
 }
 

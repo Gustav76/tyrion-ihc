@@ -720,7 +720,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             Object[] opciones = {"Si", "No", "Cancelar"};
             eleccion = JOptionPane.showOptionDialog(
                     this,
-                    "Se volverá a la etapa de carga de archivos del programa y se perderán los datos de la sesión actual.\n"
+                    "Se volverá a la etapa de carga de archivos del programa y se perderán los datos de la sesión actual.\r\n"
                     + "¿Desea Guardar ahora los datos de la misma?", "Advertencia",
                     JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
                     null, opciones, "Aceptar");
@@ -794,7 +794,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             Object[] opciones = {"Si", "No", "Cancelar"};
             eleccion = JOptionPane.showOptionDialog(
                     this,
-                    "Se volverá a la etapa de identificar casos de uso primer paso del programa y se perderán los datos editados de la sesión actual.\n"
+                    "Se volverá a la etapa de identificar casos de uso primer paso del programa y se perderán los datos editados de la sesión actual.\r\n"
                     + "¿Desea Guardar ahora los datos de la misma?", "Advertencia",
                     JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
                     null, opciones, "Aceptar");
@@ -857,7 +857,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             Object[] opciones = {"Si", "No", "Cancelar"};
             eleccion = JOptionPane.showOptionDialog(
                     this,
-                    "Se volverá a la etapa de identificar casos de uso segundo paso del programa y se perderán los datos editados de la etapa anterior.\n"
+                    "Se volverá a la etapa de identificar casos de uso segundo paso del programa y se perderán los datos editados de la etapa anterior.\r\n"
                     + "¿Desea Guardar ahora los datos de la misma?", "Advertencia",
                     JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
                     null, opciones, "Aceptar");
@@ -981,7 +981,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         int respuesta = JOptionPane.NO_OPTION;
 
         if (numeroEstado > 1) {
-            respuesta = JOptionPane.showConfirmDialog(this, "El proyecto actual se perderá,\n¿Desea guardar los cambios?",
+            respuesta = JOptionPane.showConfirmDialog(this, "El proyecto actual se perderá,\r\n¿Desea guardar los cambios?",
                     "Nuevo Proyecto", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
         }
         if (respuesta == JOptionPane.YES_OPTION) {
@@ -1184,7 +1184,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         // TODO: Ver si es posible integrar el funcionamiento con metodos de guardado, para evitar este copy+paste
         // Guarda la sesion con los datos ingresados hasta el momento en un archivo xml
         Object[] opciones = {"Si", "No", "Cancelar"};
-        int eleccion = JOptionPane.showOptionDialog(this, "Se cerrará el programa, ¿Desea Guardar los datos antes de salir?", "Advertencia", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, "Aceptar");
+        int eleccion = JOptionPane.showOptionDialog(this, "Se cerrará el programa,\r\n¿Desea Guardar los datos antes de salir?", "Advertencia", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, "Aceptar");
         if (eleccion == JOptionPane.YES_OPTION) {
             setTextLabelEstado("Guardando...");
             if (VistaPrincipal.nvista == 1) {
@@ -1236,7 +1236,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void buttonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNuevoActionPerformed
         int respuesta = JOptionPane.NO_OPTION;
         if (numeroEstado > 1) {
-            respuesta = JOptionPane.showConfirmDialog(this, "El proyecto actual se perderá,\n¿Desea guardar los cambios?",
+            respuesta = JOptionPane.showConfirmDialog(this, "El proyecto actual se perderá,\r\n¿Desea guardar los cambios?",
                     "Nuevo Proyecto", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
         }
         if (respuesta == JOptionPane.YES_OPTION) {
