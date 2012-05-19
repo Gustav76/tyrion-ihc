@@ -145,7 +145,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.ruta = "";
         // Reiniciar iconos al estado original
         labelEtapa1.setIcon(ICON_ACTUAL);
-        for (int i = 1; i < numeroEstado; i++) {
+        for (int i = 1; i < etapas.size()/*numeroEstado*/; i++) {
             etapas.get(i).setIcon(ICON_PENDIENTE);
         }
         // Cambiar vista
