@@ -55,7 +55,12 @@ public class JPResumen extends javax.swing.JPanel {
 				Point p = e.getPoint();
 				int row = tablaResumen.rowAtPoint(p);
 				int column = tablaResumen.columnAtPoint(p);
-				tablaResumen.setToolTipText(String.valueOf(tablaResumen.getValueAt(row, column)));
+                                if((!"null".equals(String.valueOf(tablaResumen.getValueAt(row, column)))) && (!"[]".equals(String.valueOf(tablaResumen.getValueAt(row, column))))){
+                                    tablaResumen.setToolTipText(String.valueOf(tablaResumen.getValueAt(row, column)));  
+                                }
+                                else{
+                                    tablaResumen.setToolTipText("Resumen no definido");
+                                }
 			}
 		});
 

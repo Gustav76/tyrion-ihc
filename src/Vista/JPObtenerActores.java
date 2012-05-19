@@ -39,7 +39,12 @@ public class JPObtenerActores extends javax.swing.JPanel {
 /*42*/                 Point p = e.getPoint();
 /*43*/                 int row = tActores.rowAtPoint(p);
 /*44*/                 int column = tActores.columnAtPoint(p);
-/*45*/                 tActores.setToolTipText(String.valueOf(tActores.getValueAt(row, column)));
+                       if((!"null".equals(String.valueOf(tActores.getValueAt(row, column)))) && (!"[]".equals(String.valueOf(tActores.getValueAt(row, column))))){
+                            tActores.setToolTipText(String.valueOf(tActores.getValueAt(row, column)));  
+                        }
+                       else{
+/*45*/                      tActores.setToolTipText("Actor no definido");
+                       }
 /*46*/             }
 /*47*/         });
 /*74*/     }

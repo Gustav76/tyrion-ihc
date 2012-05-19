@@ -60,7 +60,12 @@ public class JPIdentificarCU2 extends javax.swing.JPanel {
                 /*44*/ Point p = e.getPoint();
                 /*45*/ int row = tNombreCasoUso.rowAtPoint(p);
                 /*46*/ int column = tNombreCasoUso.columnAtPoint(p);
-                /*47*/ tNombreCasoUso.setToolTipText(String.valueOf(tNombreCasoUso.getValueAt(row, column)));
+                       if((!"null".equals(String.valueOf(tNombreCasoUso.getValueAt(row, column)))) && (!"[]".equals(String.valueOf(tNombreCasoUso.getValueAt(row, column))))){
+                            tNombreCasoUso.setToolTipText(String.valueOf(tNombreCasoUso.getValueAt(row, column)));  
+                        }
+                       else{
+/*47*/                      tNombreCasoUso.setToolTipText("Caso de Uso no asociado");
+                       }
                 /*48*/            }
             /*49*/        });
         /*50*/

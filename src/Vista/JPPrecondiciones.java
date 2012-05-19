@@ -85,7 +85,12 @@ public class JPPrecondiciones extends javax.swing.JPanel {
                 Point p = e.getPoint();
                 int row = tPrecondiciones.rowAtPoint(p);
                 int column = tPrecondiciones.columnAtPoint(p);
-                tPrecondiciones.setToolTipText(String.valueOf(tPrecondiciones.getValueAt(row, column)));
+                    if((!"null".equals(String.valueOf(tPrecondiciones.getValueAt(row, column)))) && (!"[]".equals(String.valueOf(tPrecondiciones.getValueAt(row, column))))){
+                        tPrecondiciones.setToolTipText(String.valueOf(tPrecondiciones.getValueAt(row, column)));  
+                    }
+                    else{
+                        tPrecondiciones.setToolTipText("Pre-condición no definida");
+                    }
             }
         });
     }

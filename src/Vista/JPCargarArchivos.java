@@ -28,6 +28,7 @@ public class JPCargarArchivos extends javax.swing.JPanel {
 
     public JPCargarArchivos(ControladorCargarArchivos control) {
         this.control = control;
+        this.control.control.getVista().setTextLabelEstado("Listo");
         try {
             UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {

@@ -44,7 +44,12 @@ public class JPPostcondiciones extends javax.swing.JPanel {
 /*43*/                 Point p = e.getPoint();
 /*44*/                 int row = tPostCondiciones.rowAtPoint(p);
 /*45*/                 int column = tPostCondiciones.columnAtPoint(p);
-/*46*/                 tPostCondiciones.setToolTipText(String.valueOf(tPostCondiciones.getValueAt(row, column)));
+                       if((!"null".equals(String.valueOf(tPostCondiciones.getValueAt(row, column)))) && (!"[]".equals(String.valueOf(tPostCondiciones.getValueAt(row, column))))){
+                            tPostCondiciones.setToolTipText(String.valueOf(tPostCondiciones.getValueAt(row, column)));  
+                        }
+                       else{
+/*46*/                      tPostCondiciones.setToolTipText("Post-condición no definida");
+                       }
 /*47*/             }
 /*48*/         });
 /*49*/

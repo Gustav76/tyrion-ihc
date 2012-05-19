@@ -145,7 +145,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.ruta = "";
         // Reiniciar iconos al estado original
         labelEtapa1.setIcon(ICON_ACTUAL);
-        for (int i = 1; i < etapas.size()/*numeroEstado*/; i++) {
+        for (int i = 1; i < etapas.size(); i++) {
             etapas.get(i).setIcon(ICON_PENDIENTE);
         }
         // Cambiar vista
@@ -1018,6 +1018,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
                         this.ruta = path;
                         JOptionPane.showMessageDialog(null, "Los sesión ha sido cargada exitosamente", "Aviso", JOptionPane.INFORMATION_MESSAGE, ico);
                         controlador.irControladorSesion();
+                        //Antes de re-dibujar iconos de estado, se re-inician todos
+                        for (int i = 0; i < etapas.size(); i++) {
+                            etapas.get(i).setIcon(ICON_PENDIENTE);
+                        }
                         if (VistaPrincipal.nvista == 3) {
                             this.labelEtapa1.setIcon(ICON_COMPLETADA);
                             this.labelEtapa2.setIcon(ICON_COMPLETADA);
