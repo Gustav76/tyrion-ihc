@@ -1,5 +1,4 @@
 /*1*/ package Vista;
-
 /*2*/ import Controlador.ControladorPrincipal;
 /*3*/ import Controlador.ControladorIdentificarCU2;
 /*4*/ import DTO.ObjetivoDTO;
@@ -343,7 +342,7 @@ System.out.println("<<<<<<<<<<<<<<<< "+value);
 
             },
             new String [] {
-                "Número", "Objetivos", "Caso de Uso"
+                "Número", "Objetivos", "Casos de Uso"
             }
         ) {
             Class[] types = new Class [] {
@@ -361,13 +360,11 @@ System.out.println("<<<<<<<<<<<<<<<< "+value);
                 return canEdit [columnIndex];
             }
         });
-        tNombreCasoUso.setCellSelectionEnabled(true);
         tNombreCasoUso.setName("tNombreCasoUso"); // NOI18N
         jScrollPane1.setViewportView(tNombreCasoUso);
         tNombreCasoUso.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         tNombreCasoUso.getColumnModel().getColumn(0).setHeaderValue(resourceMap.getString("tNombreCasoUso.columnModel.title2")); // NOI18N
         tNombreCasoUso.getColumnModel().getColumn(1).setHeaderValue(resourceMap.getString("tNombreCasoUso.columnModel.title0")); // NOI18N
-        tNombreCasoUso.getColumnModel().getColumn(2).setHeaderValue(resourceMap.getString("tNombreCasoUso.columnModel.title1")); // NOI18N
 
         labelInformacion.setIcon(resourceMap.getIcon("labelInformacion.icon")); // NOI18N
         labelInformacion.setText(resourceMap.getString("labelInformacion.text")); // NOI18N
@@ -382,18 +379,12 @@ System.out.println("<<<<<<<<<<<<<<<< "+value);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(labelTitulo))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(168, Short.MAX_VALUE)
-                        .addComponent(labelInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                            .addComponent(labelInstrucciones, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                    .addComponent(labelTitulo)
+                    .addComponent(labelInformacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelInstrucciones, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -406,7 +397,7 @@ System.out.println("<<<<<<<<<<<<<<<< "+value);
                 .addGap(18, 18, 18)
                 .addComponent(labelInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

@@ -142,7 +142,7 @@ public class JPIdentificarCU1 extends javax.swing.JPanel {
                                     tablaObjWork.setToolTipText(String.valueOf(tablaObjWork.getValueAt(row, column)));  
                                 }
                                 else{
-                                    tablaObjWork.setToolTipText("<html>Workflow aún no asociado<br>Arrastre aquí desde el listado de Workflows</html>");
+                                    tablaObjWork.setToolTipText("<html>Workflow aún no asociado.<br>Arrastre aquí desde el listado de Workflows</html>");
                                 }
 			}
 		});
